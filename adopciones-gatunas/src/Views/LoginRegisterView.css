@@ -1,5 +1,6 @@
 .LoginRegisterView{
   position: relative;
+  background: url('./../imgs/bg-cats-texture-png.png')
 }
 .logo-login {
   position: absolute;
@@ -13,7 +14,7 @@
   transition-delay: 0.2s
 }
 body {
-  background: url(../imgs/bg-cats-texture-png.png)#fff
+  background: #fff
 }
 .container-fluid{
   padding: 0;

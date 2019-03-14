@@ -13,17 +13,20 @@ export default class Navbar extends Component {
   }
   render () {
     return (
-     <div className="Navbar">
-        <div className="logo-dashboard text-center mb-5">
+      <div className="Navbar d-flex flex-column">
+        <div className="logo-dashboard justify-content-center mb-5">
           <Link to='/'><FontAwesomeIcon icon={['fab', 'github']} size="4x" id="logo-dashboard" color="white" /></Link>
         </div>
-        <div className="mt-4 text-center">
-          <Link to='/'><FontAwesomeIcon icon={'cat'} size="2x" color="white" /></Link>
+        <div className="mt-4 d-flex justify-content-center">
+          <Link to='/'><FontAwesomeIcon icon={'cat'} size="2x" className="dashboard-btn" color="white" /></Link>
         </div>
-        <div className="mt-4 text-center">
-          <Link to='/'><FontAwesomeIcon icon={'users'} size="2x" color="white" /></Link>
+        <div className="mt-4 d-flex justify-content-center">
+          <Link to='/'><FontAwesomeIcon icon={'users'} size="2x" className="dashboard-btn" color="white" /></Link>
         </div>
-     </div>
+        <div className="mt-auto d-flex justify-content-center">
+          <Link to='/'><FontAwesomeIcon icon={'bars'} size="2x" color="white" /></Link>
+        </div>
+      </div>
     )
   }
 }
