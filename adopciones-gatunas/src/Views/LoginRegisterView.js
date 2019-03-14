@@ -20,19 +20,19 @@ export default class LoginRegisterView extends Component {
     const pos = document.getElementById('loginPromo').style.left
     if (pos === '0px') {
       document.getElementById('loginPromo').style.left = '50%'
-      document.getElementById('logo').style.color = '#fff'
+      document.getElementById('logo-login').style.color = '#fff'
     } else {
       document.getElementById('loginPromo').style.left = '0px'
-      document.getElementById('logo').style.color = '#707070'
+      document.getElementById('logo-login').style.color = '#707070'
     }
   }
   render () {
     return (
       <div className="LoginRegisterView container-fluid row col-12">
-        <div className="logo">
-          <FontAwesomeIcon icon={['fab', 'github']} size="4x" id="logo" color="white"/>
+        <div className="logo-login">
+          <FontAwesomeIcon icon={['fab', 'github']} size="4x" id="logo-login" color="white" />
         </div>
-        <Login move={this.movePromo} />
+        <Login move={this.movePromo} history={this.props.history} />
         <LoginPromo />
         <Register move={this.movePromo} />
       </div>

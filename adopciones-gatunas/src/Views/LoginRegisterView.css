@@ -1,14 +1,14 @@
 .LoginRegisterView{
   position: relative;
 }
-.logo {
+.logo-login {
   position: absolute;
   z-index: 1001;
   left: 50px;
   top: 50px;
   transition: all 1s
 }
-#logo {
+#logo-login {
   transition: all 1s;
   transition-delay: 0.2s
 }

@@ -29,15 +29,7 @@ export default class Login extends Component {
     const requestBody = this.state.body
     axios.post(url, requestBody)
       .then((result) => {
-        alert(`The token is: ${result.data.token}`)
-        this.setState({
-          body: {
-            email: '',
-            password: ''
-          },
-          error: false,
-          errorMessage: ''
-        })
+        this.props.history.push(`/dashboard`)
       }).catch((err) => {
         this.setState({
           error: true,

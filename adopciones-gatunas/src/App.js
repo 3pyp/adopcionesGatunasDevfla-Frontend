@@ -7,11 +7,12 @@ import $ from 'jquery';
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { faCheckSquare, faCoffee, faCat, faUsers } from '@fortawesome/free-solid-svg-icons'
 
 import LoginRegisterView from './Views/LoginRegisterView'
+import Dashboard from './Views/Dashboard'
 
-library.add(fab, faCheckSquare, faCoffee)
+library.add(fab, faCheckSquare, faCoffee, faCat, faUsers)
 
 class App extends Component {
   render () {
@@ -20,6 +21,7 @@ class App extends Component {
         <div>
           <main>
             <Route exact path='/' component={LoginRegisterView} />
+            <Route exact path='/dashboard' component={Dashboard} />
             {/* <Route exact path='/register' component={Register} />
             <Route exact path='/user/:uid' component={ReadUser} /> */}
           </main>
