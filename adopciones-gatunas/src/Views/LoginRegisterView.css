@@ -1,0 +1,90 @@
+.LoginRegisterView{
+  position: relative;
+}
+.logo {
+  position: absolute;
+  z-index: 1001;
+  left: 50px;
+  top: 50px;
+  transition: all 1s
+}
+#logo {
+  transition: all 1s;
+  transition-delay: 0.2s
+}
+body {
+  background: url(../imgs/bg-cats-texture-png.png)#fff
+}
+.container-fluid{
+  padding: 0;
+  margin: 0
+}
+.form-control::placeholder { /* Firefox, Chrome, Opera */ 
+  color: #fff; 
+} 
+
+.form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */ 
+  color: #fff; 
+} 
+
+.form-control::-ms-input-placeholder { /* Microsoft Edge */ 
+  color: #fff; 
+} 
+.form-control {
+  color: #fff;
+  background-color: #fff0;
+  border: none;
+  border-bottom: 2px solid #fff;
+  border-radius: initial;
+  font-size: 20px
+}
+.form-control:focus {
+  color: #fff;
+  background-color: #fff0;
+  border-color: #fff0;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0);
+  border-bottom: 3px solid #fff;
+  border-radius: 0 0 8px 8px;
+}
+input:focus::-webkit-input-placeholder {
+  color:transparent;
+  transition: all 0.2s
+ }
+input:focus:-moz-placeholder {
+  color:transparent;
+  transition: all 0.2s
+ } 
+input:focus::-moz-placeholder {
+  color:transparent;
+  transition: all 0.2s
+ }
+input:focus:-ms-input-placeholder {
+  color:transparent;
+  transition: all 0.2s
+ } 
+input:-internal-autofill-previewed, input:-internal-autofill-selected, textarea:-internal-autofill-previewed, textarea:-internal-autofill-selected, select:-internal-autofill-previewed, select:-internal-autofill-selected {
+  background-color: rgba(255, 255, 255, 0) !important;
+  background-image: none !important;
+  color: rgb(255, 255, 255) !important;
+}
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: none;
+  -webkit-text-fill-color: rgba(255, 255, 255) !important;
+  -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0) inset !important ;
+  transition: background-color 5000s ease-in-out 0s;
+  border-bottom: 1px solid #fff;
+}
+.btn.focus, .btn:focus{
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0)
+}

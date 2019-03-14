@@ -1,0 +1,27 @@
+.Login{
+  background-color:rgba(123, 209, 196, 0.93);
+  height: 100vh;
+  position: relative;
+  z-index: 100;
+}
+.cst-btn {
+  border: 2px solid #fff;
+  border-radius: 100px;
+  color: #fff
+}
+.cst-btn:hover {
+  background: #fff;
+  color: #7bd1c4
+}
+.cst-btn-register-here {
+  background: #fff;
+  border-radius: 20px 20px 0 0;
+  padding: 15px 50px;
+  color: #7bd1c4;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+}
+.cst-btn-register-here:hover{
+  color:#FB949E
+}
