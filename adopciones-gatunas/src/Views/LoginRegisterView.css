@@ -48,31 +48,31 @@ body {
   border-bottom: 3px solid #fff;
   border-radius: 0 0 8px 8px;
 }
-input:focus::-webkit-input-placeholder {
+.LoginRegisterView input:focus::-webkit-input-placeholder {
   color:transparent;
   transition: all 0.2s
  }
-input:focus:-moz-placeholder {
+.LoginRegisterView input:focus:-moz-placeholder {
   color:transparent;
   transition: all 0.2s
  } 
-input:focus::-moz-placeholder {
+.LoginRegisterView input:focus::-moz-placeholder {
   color:transparent;
   transition: all 0.2s
  }
-input:focus:-ms-input-placeholder {
+.LoginRegisterView input:focus:-ms-input-placeholder {
   color:transparent;
   transition: all 0.2s
  } 
-input:-internal-autofill-previewed, input:-internal-autofill-selected, textarea:-internal-autofill-previewed, textarea:-internal-autofill-selected, select:-internal-autofill-previewed, select:-internal-autofill-selected {
+.LoginRegisterView input:-internal-autofill-previewed, input:-internal-autofill-selected, textarea:-internal-autofill-previewed, textarea:-internal-autofill-selected, select:-internal-autofill-previewed, select:-internal-autofill-selected {
   background-color: rgba(255, 255, 255, 0) !important;
   background-image: none !important;
   color: rgb(255, 255, 255) !important;
 }
 /* Change Autocomplete styles in Chrome*/
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus
+.LoginRegisterView input:-webkit-autofill,
+.LoginRegisterView input:-webkit-autofill:hover, 
+.LoginRegisterView input:-webkit-autofill:focus
 textarea:-webkit-autofill,
 textarea:-webkit-autofill:hover
 textarea:-webkit-autofill:focus,

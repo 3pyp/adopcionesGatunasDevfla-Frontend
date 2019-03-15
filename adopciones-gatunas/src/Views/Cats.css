@@ -9,9 +9,9 @@
   color: #707070;
 }
 .addCat{
-  position: absolute;
+  position: fixed;
   bottom: 30px;
-  right: 20px;
+  right: 30px;
   cursor: pointer;
 }
 #addCatIcon{
@@ -38,4 +38,33 @@
   background: #FB949E;
   border: 1px solid #FB949E;
   color: #fff
+}.Cats .btn-danger{
+  background: #FB949E;
+  border: none
+}
+.Cats .btn-danger:hover{
+  background: rgb(184, 91, 98)
+}
+.Cats .btn-warning{
+  background: #FFE7BC;
+  color: #707070;
+  border: none
+}
+.Cats .btn-warning:hover{
+  background: rgb(184, 164, 128)
+}
+.Cats .btn-success{
+  background: #7BD1C4;
+  border: none
+}
+.Cats .btn-success:hover{
+  background: rgb(83, 148, 139)
+}
+.Cats .btn-cancel{
+  background: #707070;
+  border: none;
+  color: #fff
+}
+.Cats .btn-cancel:hover{
+  background: #484848
 }

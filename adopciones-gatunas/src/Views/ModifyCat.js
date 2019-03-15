@@ -50,9 +50,7 @@ export default class ModifyCat extends Component {
     const requestBody = this.state.cat
     axios.put(url, requestBody, { headers: { 'Authorization': `tk ${this.state.token}` } })
       .then((result) => {
-        console.log(result)
-        // alert(`User was saved with the id: ${result.data.id}`)
-        // this.props.history.push(`/`)
+        this.props.history.push(`/dashboard/cats`)
       }).catch((err) => {
         console.log(err.response.data)
       });
@@ -78,11 +76,31 @@ export default class ModifyCat extends Component {
   }
   renderAdoptedBtn = () => {
     return this.state.cat.is_adopted === false
-      ? <button type="button" id="adopt" className="btn btn-success mt-auto mb-auto col-3" onClick={this.adoptCat}>Adoptar</button>
+      ? <button type="button" id="adopt" className="btn btn-success mt-auto mb-auto col-3" data-toggle="modal" data-target="#exampleModalCenter">Adoptar</button>
       : true
   }
   adoptCat = () => {
-    console.log('adoptado');
+
+    const url = `https://nameless-citadel-76715.herokuapp.com/api/v1/adopt/cat/${this.props.match.params.catid}/`
+    const requestBody = this.state.cat.current_owner
+    axios.post(url, requestBody, { headers: { 'Authorization': `tk ${this.state.token}` } })
+      .then((result) => {
+        // alert(`User was saved with the id: ${result.data.id}`)
+        this.props.history.push(`/dashboard/cats`)
+      }).catch((err) => {
+        console.log(err.response.data)
+      });
+  }
+  deleteCat = () => {
+
+    const url = `https://nameless-citadel-76715.herokuapp.com/api/v1/delete/cat/${this.props.match.params.catid}/`
+    axios.delete(url, { headers: { 'Authorization': `tk ${this.state.token}` } })
+      .then((result) => {
+        // alert(`User was saved with the id: ${result.data.id}`)
+        this.props.history.push(`/dashboard/cats`)
+      }).catch((err) => {
+        console.log(err.response.data)
+      });
   }
   onCatInputCatChange = (e) => {
     const { id, value } = e.target
@@ -107,59 +125,73 @@ export default class ModifyCat extends Component {
     const { id, value } = e.target
     const newCat = { ...this.state.cat }
     const currentOwner = { ...this.state.cat.current_owner }
-    currentOwner[0][id] = value
-    const newCurrentOwner = Object.values(currentOwner)
-    newCat.first_owner = newCurrentOwner
+    currentOwner[id] = value
+    newCat.current_owner = currentOwner
     this.setState({
       cat: newCat
     })
   }
-  renderAdoptInfo = () => {
-    return this.state.cat.is_adopted === true
+  // renderAdoptInfo = () => {
+  //   return this.state.cat.is_adopted === true
 
-      ? <div className="row col-6 no-gutters pl-4">
-        <div className="col-12 my-4">
-          <h5>Datos del primer dueño</h5>
-        </div>
-        <div className="col-12 col-md-6 pr-md-3">
-          <label>Primer Nombre</label>
-          <input
-            id="owner_name"
-            type="text"
-            className="form-control"
-            placeholder="Primer nombre"
-            onChange={this.onCurrentOwnerInputChange}
-            value={this.state.cat.current_owner[0].owner_name}
-            disabled={this.state.disabled}
-          />
-        </div>
-        <div className="col-12 col-md-6 pl-md-3">
-          <label>Segundo Nombre</label>
-          <input
-            id="owner_last_name"
-            type="text"
-            className="form-control"
-            placeholder="Segundo nombre"
-            onChange={this.onCurrentOwnerInputChange}
-            value={this.state.cat.current_owner[0].owner_last_name}
-            disabled={this.state.disabled}
-          />
-        </div>
-        <div className="col-12 mt-4">
-          <label>Teléfono</label>
-          <input
-            id="owner_celphone"
-            type="number"
-            className="form-control"
-            placeholder="Teléfono"
-            onChange={this.onCurrentOwnerInputChange}
-            value={this.state.cat.current_owner[0].owner_celphone}
-            disabled={this.state.disabled}
-          />
-        </div>
-      </div>
-      : true
-  }
+  //     ? <div className="row col-12 no-gutters">
+  //       <div className="col-12 mt-4 no-gutters px-0">
+  //         <hr />
+  //       </div>
+  //       <div className="col-12 my-4">
+  //         <h5>Datos del adoptante</h5>
+  //       </div>
+  //       <div className="col-12 col-md-6 pr-md-4">
+  //         <label>Primer Nombre</label>
+  //         <input
+  //           id="owner_name"
+  //           type="text"
+  //           className="form-control"
+  //           placeholder="Primer nombre"
+  //           onChange={this.onCurrentOwnerInputChange}
+  //           value={this.state.cat.current_owner[0].owner_name}
+  //           disabled={this.state.disabled}
+  //         />
+  //       </div>
+  //       <div className="col-12 col-md-6 pl-md-4">
+  //         <label>Segundo Nombre</label>
+  //         <input
+  //           id="owner_last_name"
+  //           type="text"
+  //           className="form-control"
+  //           placeholder="Segundo nombre"
+  //           onChange={this.onCurrentOwnerInputChange}
+  //           value={this.state.cat.current_owner[0].owner_last_name}
+  //           disabled={this.state.disabled}
+  //         />
+  //       </div>
+  //       <div className="col-6 mt-4 pr-md-4">
+  //         <label>Teléfono</label>
+  //         <input
+  //           id="owner_celphone"
+  //           type="number"
+  //           className="form-control"
+  //           placeholder="Teléfono"
+  //           onChange={this.onCurrentOwnerInputChange}
+  //           value={this.state.cat.current_owner[0].owner_celphone}
+  //           disabled={this.state.disabled}
+  //         />
+  //       </div>
+  //       <div className="col-6 mt-4 pl-md-4">
+  //         <label>Correo Electrónico</label>
+  //         <input
+  //           id="owner_email"
+  //           type="email"
+  //           className="form-control"
+  //           placeholder="Correo Electrónico"
+  //           onChange={this.onCurrentOwnerInputChange}
+  //           value={this.state.cat.current_owner[0].owner_email}
+  //           disabled={this.state.disabled}
+  //         />
+  //       </div>
+  //     </div>
+  //     : true
+  // }
 
   render () {
     return (
@@ -180,7 +212,7 @@ export default class ModifyCat extends Component {
             <div className="col-12 px-0 mt-3">{this.renderModifyBtn()}</div>
             <div className="col-12 px-0 mt-3">{this.renderAdoptedBtn()}</div>
             <div className="col-12 px-0 mt-3">
-            <button type="button" id="modify" className="btn btn-danger mt-auto mb-auto col-3" onClick={this.changeModifyStatus}>Eliminar Gato</button>
+              <button type="button" id="modify" className="btn btn-danger mt-auto mb-auto col-3" onClick={this.deleteCat}>Eliminar Gato</button>
             </div>
           </div>
         </div>
@@ -243,7 +275,7 @@ export default class ModifyCat extends Component {
                       className="form-control"
                       placeholder="Primer nombre"
                       onChange={this.onFirstOwnerInputChange}
-                      value={this.state.cat.first_owner[0].name}
+                      value={this.state.cat.first_owner.name}
                       disabled={this.state.disabled}
                     />
                   </div>
@@ -255,7 +287,7 @@ export default class ModifyCat extends Component {
                       className="form-control"
                       placeholder="Segundo nombre"
                       onChange={this.onFirstOwnerInputChange}
-                      value={this.state.cat.first_owner[0].last_name}
+                      value={this.state.cat.first_owner.last_name}
                       disabled={this.state.disabled}
                     />
                   </div>
@@ -267,14 +299,78 @@ export default class ModifyCat extends Component {
                       className="form-control"
                       placeholder="Teléfono"
                       onChange={this.onFirstOwnerInputChange}
-                      value={this.state.cat.first_owner[0].celphone}
+                      value={this.state.cat.first_owner.celphone}
                       disabled={this.state.disabled}
                     />
                   </div>
                 </div>
-                {this.renderAdoptInfo()}
+                {/* {this.renderAdoptInfo()} */}
                 <button disabled={this.state.disabled} id="save" type="submit" className="btn btn-success mt-5 col-1 offset-11">Guardar</button>
               </form>
+            </div>
+          </div>
+        </div>
+        <div className="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="adoptModal" aria-hidden="true">
+          <div className="modal-dialog modal-dialog-centered" role="document">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="adoptModal">Datos del adoptante</h5>
+                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div className="modal-body">
+                <div className="row col-12 no-gutters my-4">
+                  <div className="col-12 mt-2">
+                    <label>Primer Nombre</label>
+                    <input
+                      id="owner_name"
+                      type="text"
+                      className="form-control"
+                      placeholder="Primer nombre"
+                      onChange={this.onCurrentOwnerInputChange}
+                      value={this.state.cat.current_owner.owner_name}
+                    />
+                  </div>
+                  <div className="col-12 mt-2">
+                    <label>Segundo Nombre</label>
+                    <input
+                      id="owner_last_name"
+                      type="text"
+                      className="form-control"
+                      placeholder="Segundo nombre"
+                      onChange={this.onCurrentOwnerInputChange}
+                      value={this.state.cat.current_owner.owner_last_name}
+                    />
+                  </div>
+                  <div className="col-12 mt-2">
+                    <label>Teléfono</label>
+                    <input
+                      id="owner_celphone"
+                      type="number"
+                      className="form-control"
+                      placeholder="Teléfono"
+                      onChange={this.onCurrentOwnerInputChange}
+                      value={this.state.cat.current_owner.owner_celphone}
+                    />
+                  </div>
+                  <div className="col-12 mt-2">
+                    <label>Correo Electrónico</label>
+                    <input
+                      id="owner_email"
+                      type="email"
+                      className="form-control"
+                      placeholder="Correo Electrónico"
+                      onChange={this.onCurrentOwnerInputChange}
+                      value={this.state.cat.current_owner.owner_email}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="modal-footer">
+                <button type="button" className="btn btn-cancel" data-dismiss="modal">Cerrar</button>
+                <button type="button" className="btn btn-success" onClick={this.adoptCat}>Adoptar</button>
+              </div>
             </div>
           </div>
         </div>
