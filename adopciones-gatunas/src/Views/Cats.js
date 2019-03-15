@@ -29,11 +29,13 @@ export default class Cats extends Component {
       });
   }
   renderCats = () => {
-    return this.state.cats.length === 0
+    return this.state.cats.length === 0 && this.state.error === false
       ? <h1>Cargando...</h1>
       : this.state.cats.map((cat, i) =>
         <CatsCard key={i}
           cat={cat}
+          match={this.props}
+          token={this.state.token}
         />)
   }
   renderError = () => {
@@ -42,23 +44,24 @@ export default class Cats extends Component {
       : true
   }
   render () {
+    console.log(this.props)
     return (
       <div className="Cats col px-5">
         <div className="addCat">
           <FontAwesomeIcon icon={'plus-circle'} size="4x" id="addCatIcon" color="black" />
         </div>
         <div className="title col-12 pt-4 px-0">
-          <h1>Cats</h1>
+          <h1>Gatos</h1>
         </div>
         <div className="row col-12 pt-3">
           <div className="">
             <button className="btn cats-btn cats-btn-active">
-              All Cats
+              Todos los gatos
             </button>
           </div>
           <div className="">
             <button className="btn cats-btn">
-              Active Cats
+              Gatos activos
             </button>
           </div>
           <div className="">
@@ -75,10 +78,11 @@ export default class Cats extends Component {
         <div className="col my-4 no-gutters px-0">
           <hr />
         </div>
-        <div className="row col no-gutters px-0 card-deck">
+        <div className="row col px-0">
           {this.renderCats()}
           {this.renderError()}
         </div>
+        
       </div>
     )
   }

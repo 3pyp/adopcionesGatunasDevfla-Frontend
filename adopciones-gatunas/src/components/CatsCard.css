@@ -1,6 +1,9 @@
-.cats-card{
+.CatsCard {
+  padding: 20px
+}
+.cst-cats-card{
   cursor: pointer;
 }
-.cats-card:hover{
+.cst-cats-card:hover{
   box-shadow: 0 0 15px 5px #96969650
 }

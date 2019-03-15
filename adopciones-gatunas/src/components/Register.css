@@ -4,20 +4,20 @@
   position: relative;
   z-index: 100;
 }
-.cst-btn {
+.Register .cst-btn {
   border: 2px solid #fff;
   border-radius: 100px;
   color: #fff
 }
-.cst-btn:hover {
+.Register .cst-btn:hover {
   background: #fff;
   color: #7bd1c4
 }
-.cst-btn:focus{
+.Register .cst-btn:focus{
   outline: 0;
   box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0)
 }
-.cst-btn-register-here {
+.Register .cst-btn-register-here {
   background: #fff;
   border-radius: 20px 20px 0 0;
   padding: 15px 50px;
@@ -26,6 +26,6 @@
   font-weight: 600;
   letter-spacing: 0.7px;
 }
-.cst-btn-register-here:hover{
+.Register .cst-btn-register-here:hover{
   color:#FB949E
 }

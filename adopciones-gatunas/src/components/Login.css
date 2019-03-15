@@ -4,16 +4,16 @@
   position: relative;
   z-index: 100;
 }
-.cst-btn {
+.Login .cst-btn {
   border: 2px solid #fff;
   border-radius: 100px;
   color: #fff
 }
-.cst-btn:hover {
+.Login .cst-btn:hover {
   background: #fff;
   color: #7bd1c4
 }
-.cst-btn-register-here {
+.Login .cst-btn-register-here {
   background: #fff;
   border-radius: 20px 20px 0 0;
   padding: 15px 50px;
@@ -22,6 +22,6 @@
   font-weight: 600;
   letter-spacing: 0.7px;
 }
-.cst-btn-register-here:hover{
+.Login .cst-btn-register-here:hover{
   color:#FB949E
 }

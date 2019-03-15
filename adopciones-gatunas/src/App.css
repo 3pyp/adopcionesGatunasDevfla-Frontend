@@ -1,6 +1,7 @@
 .Dashboard{
   overflow-y: scroll;
-  overflow-x: hidden
+  overflow-x: hidden;
+  height: 100vh;
 }
 .App, #main{
   overflow: hidden;

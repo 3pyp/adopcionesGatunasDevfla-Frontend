@@ -1,0 +1,53 @@
+.ModifyCat{
+  height: 100vh;
+}
+.ModifyCat .card {
+  padding: 0;
+  /* box-shadow: 0 0 10px 3px rgba(141, 141, 141, 0.233) */
+}
+.ModifyCat .header-img {
+  height: 20%;
+  width: 100%
+}
+.ModifyCat .form-control:disabled, .form-control[readonly] {
+  background-color: #fff;
+  opacity: 1;
+  border: 1px solid rgb(240, 240, 240);
+}
+.ModifyCat .form-control {
+  transition: all 0.5s;
+  border: 1px solid #7BD1C4;
+}
+.ModifyCat img {
+  transition: all 0.5s
+}
+.ModifyCat .btn-danger{
+  background: #FB949E;
+  border: none
+}
+.ModifyCat .btn-danger:hover{
+  background: rgb(184, 91, 98)
+}
+.ModifyCat .btn-warning{
+  background: #FFE7BC;
+  color: #707070;
+  border: none
+}
+.ModifyCat .btn-warning:hover{
+  background: rgb(184, 164, 128)
+}
+.ModifyCat .btn-success{
+  background: #7BD1C4;
+  border: none
+}
+.ModifyCat .btn-success:hover{
+  background: rgb(83, 148, 139)
+}
+.ModifyCat .btn-cancel{
+  background: #707070;
+  border: none;
+  color: #fff
+}
+.ModifyCat .btn-cancel:hover{
+  background: #484848
+}

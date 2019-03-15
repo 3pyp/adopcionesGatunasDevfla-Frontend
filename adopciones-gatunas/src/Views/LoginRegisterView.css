@@ -20,18 +20,18 @@ body {
   padding: 0;
   margin: 0
 }
-.form-control::placeholder { /* Firefox, Chrome, Opera */ 
+.LoginRegisterView .form-control::placeholder { /* Firefox, Chrome, Opera */ 
   color: #fff; 
 } 
 
-.form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */ 
+.LoginRegisterView .form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */ 
   color: #fff; 
 } 
 
-.form-control::-ms-input-placeholder { /* Microsoft Edge */ 
+.LoginRegisterView .form-control::-ms-input-placeholder { /* Microsoft Edge */ 
   color: #fff; 
 } 
-.form-control {
+.LoginRegisterView .form-control {
   color: #fff;
   background-color: #fff0;
   border: none;
@@ -39,7 +39,7 @@ body {
   border-radius: initial;
   font-size: 20px
 }
-.form-control:focus {
+.LoginRegisterView .form-control:focus {
   color: #fff;
   background-color: #fff0;
   border-color: #fff0;
@@ -85,7 +85,7 @@ select:-webkit-autofill:focus {
   transition: background-color 5000s ease-in-out 0s;
   border-bottom: 1px solid #fff;
 }
-.btn.focus, .btn:focus{
+.LoginRegisterView .btn.focus, .btn:focus{
   outline: 0;
   box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0)
 }

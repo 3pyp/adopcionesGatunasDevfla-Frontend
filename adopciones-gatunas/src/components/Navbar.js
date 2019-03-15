@@ -13,7 +13,7 @@ export default class Navbar extends Component {
   }
   render () {
     return (
-      <div className="Navbar d-flex flex-column">
+      <div className="Navbar d-none d-md-flex flex-column">
         <div className="logo-dashboard justify-content-center mb-5">
           <Link to='/'><FontAwesomeIcon icon={['fab', 'github']} size="4x" id="logo-navbar" color="white" /></Link>
         </div>

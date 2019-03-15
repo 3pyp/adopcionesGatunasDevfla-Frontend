@@ -31,7 +31,7 @@ class App extends Component {
                 <Navbar />
               <div className="Dashboard col">
                 <PrivateRoute exact path='/dashboard/cats' component={Cats} />
-                <PrivateRoute exact path='/dashboard/modify' component={ModifyCat} />
+                <PrivateRoute exact path='/dashboard/modify/:catid' component={ModifyCat} />
               </div>
             </div>
           </main>
