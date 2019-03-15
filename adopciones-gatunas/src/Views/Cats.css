@@ -1,0 +1,41 @@
+.Cats{
+  background: #fff;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  height: 100vh;
+}
+.title{
+  color: #707070;
+}
+.addCat{
+  position: absolute;
+  bottom: 30px;
+  right: 20px;
+  cursor: pointer;
+}
+#addCatIcon{
+  color: #7bd1c4;
+}
+.cats-btn{
+  border: 1px solid #707070;
+  color: #707070;
+  border-radius: 50px;
+  padding: 1px 20px;
+  margin: 0 15px;
+  cursor: pointer;
+  font-size: 14px
+}
+.cats-btn:hover{
+  background: #FB949E;
+  border: 1px solid #FB949E;
+  color: #fff
+}
+.cats-btn:first-child{
+  margin-left: 0
+}
+.cats-btn-active {
+  background: #FB949E;
+  border: 1px solid #FB949E;
+  color: #fff
+}

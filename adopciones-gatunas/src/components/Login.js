@@ -15,10 +15,13 @@ export default class Login extends Component {
       errorMessage: 'Error'
     }
   }
+  componentWillMount () {
+    window.sessionStorage.setItem("token", "");
+  }
   onInputChange = (e) => {
     const { id, value } = e.target
     const newBody = { ...this.state.body }
-    newBody[id] =  value
+    newBody[id] = value
     this.setState({
       body: newBody
     })
@@ -29,11 +32,12 @@ export default class Login extends Component {
     const requestBody = this.state.body
     axios.post(url, requestBody)
       .then((result) => {
-        this.props.history.push(`/dashboard`)
+        window.sessionStorage.setItem("token", result.data.token);
+        this.props.history.push('/dashboard/cats')
       }).catch((err) => {
         this.setState({
           error: true,
-          errorMessage: `${err}`
+          errorMessage: `${err.response.data.message}`
         })
       });
   }
@@ -41,7 +45,7 @@ export default class Login extends Component {
     return this.state.error === true
       ? <div className="alert mt-4 mb-1 alert-danger" role="alert">{this.state.errorMessage}</div>
       : true
-    }
+  }
 
   render () {
     return (

@@ -3,6 +3,9 @@
   height: 100vh;
   padding: 20px 10px
 }
-.dashboard-btn:hover{
+.navbar-btn:hover{
+  color: #FFE7BC
+}
+.navbar-btn-active{
   color: #FFE7BC
 }

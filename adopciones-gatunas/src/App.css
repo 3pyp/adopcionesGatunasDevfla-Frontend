@@ -2,3 +2,7 @@
   overflow-y: scroll;
   overflow-x: hidden
 }
+.App, #main{
+  overflow: hidden;
+  height: 100vh;
+}

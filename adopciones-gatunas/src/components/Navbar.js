@@ -15,13 +15,13 @@ export default class Navbar extends Component {
     return (
       <div className="Navbar d-flex flex-column">
         <div className="logo-dashboard justify-content-center mb-5">
-          <Link to='/'><FontAwesomeIcon icon={['fab', 'github']} size="4x" id="logo-dashboard" color="white" /></Link>
+          <Link to='/'><FontAwesomeIcon icon={['fab', 'github']} size="4x" id="logo-navbar" color="white" /></Link>
         </div>
         <div className="mt-4 d-flex justify-content-center">
-          <Link to='/'><FontAwesomeIcon icon={'cat'} size="2x" className="dashboard-btn" color="white" /></Link>
+          <Link to='/dashboard/cats'><FontAwesomeIcon icon={'cat'} size="2x" className="navbar-btn navbar-btn-active" color="white" /></Link>
         </div>
         <div className="mt-4 d-flex justify-content-center">
-          <Link to='/'><FontAwesomeIcon icon={'users'} size="2x" className="dashboard-btn" color="white" /></Link>
+          <Link to='/'><FontAwesomeIcon icon={'users'} size="2x" className="navbar-btn" color="white" /></Link>
         </div>
         <div className="mt-auto d-flex justify-content-center">
           <Link to='/'><FontAwesomeIcon icon={'bars'} size="2x" color="white" /></Link>
